@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="appointments.css" />
+    <script src="appointments.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">MediGuard</a>
+      <div class="navigation">
+        <ul class="menu">
+          <div class="close-btn"></div>
+          <li class="menu-item"><a href="#">Home</a></li>
+          <li class="menu-item">
+            <a class="sub-btn" href="#"
+              >Find Care <i class="fas fa-angle-down"></i
+            ></a>
+            <ul class="sub-menu">
+              <li class="sub-item"><a href="#">Book Appointment</a></li>
+              <li class="sub-item"><a href="#">Medical Services</a></li>
+              <li class="sub-item"><a href="#">Immediate Care</a></li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a class="sub-btn" href="#"
+              >Find a doctor <i class="fas fa-angle-down"></i
+            ></a>
+            <ul class="sub-menu">
+              <li class="sub-item"><a href="#">Sub Item 01</a></li>
+              <li class="sub-item"><a href="#">Sub Item 02</a></li>
+              <li class="sub-item"><a href="#">Sub Item 03</a></li>
+              <li class="sub-item"><a href="#">Sub Item 04</a></li>
+              <li class="sub-item more">
+                <a class="more-btn" href="#"
+                  >More Items <i class="fas fa-angle-right"></i
+                ></a>
+                <ul class="more-menu">
+                  <li class="more-item"><a href="#">More Item 01</a></li>
+                  <li class="more-item"><a href="#">More Item 02</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu-item"><a href="#">Services</a></li>
+          <li class="menu-item"><a href="#">About</a></li>
+          <li class="menu-item"><a href="#">Contact</a></li>
+          <li class="sign"><a href="/Project/signup.html">Join Now </a></li>
+          <li class="sign"><a href="/Project/signin.html">Sign In</a></li>
+        </ul>
+      </div>
+      <div class="menu-btn"></div>
+    </header>
+
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+    <div class="wrapper">
+      <div class="container">
+        <div class="search_wrap search_wrap_1">
+          <div class="search_box">
+            <input
+              type="text"
+              class="input"
+              placeholder="Search Doctor or Hospital"
+            />
+            <div class="btn btn_common">
+              <i class="fas fa-search"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div class="form">
+      <form action="/book-appointment" method="POST">
+        <table>
+          <tr>
+            <td><label for="doctor" class="label">Choose a doctor:</label></td>
+            <td>
+              <select id="doctor" name="doctor" class="input">
+                <!-- Populate the options dynamically with available doctors -->
+                <option value="doctor1">Doctor 1</option>
+                <option value="doctor2">Doctor 2</option>
+                <option value="doctor3">Doctor 3</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="appointmentDate" class="label"
+                >Select appointment date:</label
+              >
+            </td>
+            <td>
+              <input
+                type="date"
+                id="appointmentDate"
+                name="appointmentDate"
+                class="input"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="appointmentTime" class="label"
+                >Select appointment time:</label
+              >
+            </td>
+            <td>
+              <input
+                type="time"
+                id="appointmentTime"
+                name="appointmentTime"
+                class="input"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="patientName" class="label">Your Name:</label></td>
+            <td>
+              <input
+                type="text"
+                id="patientName"
+                name="patientName"
+                class="input"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="patientEmail" class="label">Email Address:</label>
+            </td>
+            <td>
+              <input
+                type="email"
+                id="patientEmail"
+                name="patientEmail"
+                class="input"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="patientPhone" class="label">Contact Number:</label>
+            </td>
+            <td>
+              <input
+                type="tel"
+                id="patientPhone"
+                name="patientPhone"
+                class="input"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="additionalDetails" class="label"
+                >Additional Details:</label
+              >
+            </td>
+            <td>
+              <textarea
+                id="additionalDetails"
+                name="additionalDetails"
+                class="input"
+              ></textarea>
+            </td>
+          </tr>
+        </table>
+        <button type="submit">Book Appointment</button>
+      </form>
+    </div>
+  </body>
+</html>
