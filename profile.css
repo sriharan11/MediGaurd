@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+header{
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #23252B;
+  box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
+  padding: 0 100px;
+  transition: 0.6s;
+}
+
+header .logo{
+  color: #fff;
+  font-size: 1.4em;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+header .navigation{
+  position: relative;
+  line-height: 75px;
+  transition: 0.6s;
+  transition-property: line-height;
+}
+
+header.sticky .navigation{
+  line-height: 60px;
+}
+
+
+header .navigation .menu{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  user-select: none;
+}
+
+
+.container {
+  width: 1000px;
+  margin: 25px auto;
+}
+
+.profile-heading {
+  background: #7800CF;
+  border-radius: 7px;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.profile-form {
+  background: #fff;
+  border-radius: 7px;
+  padding: 20px;
+  margin-top: 20px;
+  font-family: sans-serif;
+}
+
+.profile-form label {
+  font-weight: bold;
+}
+
+.profile-form input,
+.profile-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.profile-form button {
+  background: #7800CF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+}
+
+.profile-form button:hover {
+  background: #6600A8;
+}
+
+.profile-form .edit-button {
+  background: #FF8800;
+  margin-right: 10px;
+}
+
+.profile-form .check-button {
+  background: #007bff;
+  margin-right: 10px;
+}
+
+.profile-pic {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 3px solid #7800CF;
+  margin-bottom: 10px;
+}
+
+.profile-pic input[type="file"] {
+  display: none;
+}

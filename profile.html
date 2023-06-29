@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile Page</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="contactus.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    
+    .container {
+      width: 1000px;
+      margin: 25px auto;
+    }
+    
+    .profile-heading {
+      background: black;
+      border-radius: 7px;
+      padding: 10px;
+      color: #fff;
+      text-align: center;
+      font-family: sans-serif;
+    }
+    
+    .profile-form {
+      background: #fff;
+      border-radius: 7px;
+      padding: 20px;
+      margin-top: 20px;
+      font-family: sans-serif;
+    }
+    
+    .profile-form label {
+      font-weight: bold;
+    }
+    
+    .profile-form input,
+    .profile-form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    .profile-form button {
+      background: #7800CF;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      float: right;
+      margin-left: 10px;
+    }
+    
+    .profile-form button:hover {
+      background: #6600A8;
+    }
+    
+    .profile-form .actions {
+      margin-top: 20px;
+      text-align: right;
+    }
+    
+    .profile-pic {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .profile-pic img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+<header>
+      <a href="#" class="logo">MediGuard</a>
+      <div class="navigation">
+        <ul class="menu">
+          <div class="close-btn"></div>
+          <li class="menu-item"><a href="MainPage.html">Home</a></li>
+          <li class="menu-item">
+            <a class="sub-btn" href="#">Find Care <i class="fas fa-angle-down"></i></a>
+            <ul class="sub-menu">
+              <li class="sub-item"><a href="#">Book Appointment</a></li>
+              <li class="sub-item"><a href="#">Medical Services</a></li>
+              <li class="sub-item"><a href="#">Immediate Care</a></li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <a class="sub-btn" href="#">Find a doctor <i class="fas fa-angle-down"></i></a>
+            <ul class="sub-menu">
+              <li class="sub-item"><a href="#">Sub Item 01</a></li>
+              <li class="sub-item"><a href="#">Sub Item 02</a></li>
+              <li class="sub-item"><a href="#">Sub Item 03</a></li>
+              <li class="sub-item"><a href="#">Sub Item 04</a></li>
+              <li class="sub-item more">
+                <a class="more-btn" href="#">More Items <i class="fas fa-angle-right"></i></a>
+                <ul class="more-menu">
+                  <li class="more-item"><a href="#">More Item 01</a></li>
+                  <li class="more-item"><a href="#">More Item 02</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu-item"><a href="#">Services</a></li>
+          <li class="menu-item"><a href="#">About</a></li>
+          <li class="menu-item"><a href="#">Contact</a></li>
+          <li class="sign" ><a  href="signup.html">Join Now </a></li>
+        <li class="sign"><a  href="signin.html">Sign In</a></li>
+        </ul>
+      </div>
+      <div class="menu-btn"></div>
+    </header>
+  <div class="container">
+    <div class="profile-heading">
+      <h3>My Profile</h3>
+    </div>
+    <div class="profile-form">
+      <form id="profileForm">
+        <div class="profile-pic">
+          <img src="" alt="Profile Picture" id="profilePic">
+          <input type="file" id="uploadProfilePic" accept="image/*" onchange="displayProfilePic(event)">
+        </div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" placeholder="Enter your age" required>
+        
+        <label for="sex">Sex:</label>
+        <select id="sex" name="sex" required>
+          <option value="">Select</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+        
+        <div class="actions">
+          <button type="submit" id="saveButton" disabled>Save</button>
+          <button class="edit-button" onclick="toggleEditMode()">Edit</button>
+          <button class="check-button" onclick="checkData()">Check</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <script>
+    function toggleEditMode() {
+      const form = document.getElementById('profileForm');
+      const saveButton = document.getElementById('saveButton');
+      
+      if (form.hasAttribute('readonly')) {
+        form.removeAttribute('readonly');
+        saveButton.removeAttribute('disabled');
+        document.querySelector('.edit-button').textContent = 'Cancel';
+      } else {
+        form.setAttribute('readonly', 'readonly');
+        saveButton.setAttribute('disabled', 'disabled');
+        document.querySelector('.edit-button').textContent = 'Edit';
+      }
+    }
+    
+    function displayProfilePic(event) {
+      const profilePic = document.getElementById('profilePic');
+      profilePic.src = URL.createObjectURL(event.target.files[0]);
+    }
+    
+    function checkData() {
+      // Perform data validation or error checking here
+      alert('Data checked successfully!');
+    }
+    
+    document.getElementById('profileForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      // Perform form submission or data update here
+    });
+  </script>
+</body>
+</html>
